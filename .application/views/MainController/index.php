@@ -1,0 +1,177 @@
+<? $this->load->view('layout/header') ?>
+
+
+<!-- Content -->
+<div class="page">
+	<div class="centered">
+
+		<div class="header">
+			<h1 class="heading">Download Instagram HD Profile Pictures, HD Videos and HD Images</h1>
+			<p class="desc">Search and download Instagram profile pictures, stories, videos, reels and more</p>
+		</div>
+
+		<!-- AD -->
+
+		<div class="tools-list">
+
+			<div class="tools-header">
+				<h2 class="heading">Downloader Tools for Instagram</h2>
+				<p class="desc">Use our Instagram downloader tools to save the best photos and videos to your phone or computer for free
+					in high quality</p>
+			</div>
+
+			<div class="list">
+				<div class="tool profile-pictures"><a class="link" href="instagram-tools/profile-picture-downloader.html"><i
+							class="icon"></i><span class="title">Profile Pictures Downloader</span>
+						<div class="arrow"></div>
+					</a><i class="bg-icon"></i></div>
+				<div class="tool instagram-videos"><a class="link" href="instagram-tools/video-downloader.html"><i class="icon"></i><span
+							class="title">Instagram Videos Downloader</span>
+						<div class="arrow"></div>
+					</a><i class="bg-icon"></i></div>
+				<div class="tool instagram-photos"><a class="link" href="instagram-tools/photo-downloader.html"><i class="icon"></i><span
+							class="title">Instagram Photos Downloader</span>
+						<div class="arrow"></div>
+					</a><i class="bg-icon"></i></div>
+				<div class="tool instagram-reels"><a class="link" href="instagram-tools/reel-downloader.html"><i class="icon"></i><span
+							class="title">Instagram Reels Downloader</span>
+						<div class="arrow"></div>
+					</a><i class="bg-icon"></i></div>
+				<div class="tool instagram-stories"><a class="link" href="instagram-tools/story-downloader.html"><i class="icon"></i><span
+							class="title">Instagram Stories Downloader</span>
+						<div class="arrow"></div>
+					</a><i class="bg-icon"></i></div>
+			</div>
+
+		</div>
+
+		<!-- AD -->
+
+
+		<div class="content">
+			<h2 class="heading">Download Instagram Profile Pictures</h2>
+			<p>Have you ever wanted to view someone’s profile picture in full size on Instagram but couldn’t figure out how to do it?
+				<?= $_SERVER['CI_APP_SHORT_NAME'] ?> solves this issue! <?= $_SERVER['CI_APP_SHORT_NAME'] ?> is a free service allowing
+				anyone to search for an account and view the user’s profile
+				picture in high quality.</p>
+			<p>With all the features Instagram offers, the site is restricted on this crucial detail—the minuscule profile picture.
+				Having the option to set your profile as private and choose any name as your username limits the information others
+				receive about your account. Without the option of enlarging the profile picture to get a clear view of the face displayed,
+				people who are picky about their followers can become frustrated. Instead of wasting time asking your friends or family to
+				help identify an unknown user, try <?= $_SERVER['CI_APP_SHORT_NAME'] ?> to make your life easier.</p>
+			<p>Whether you prefer to use our app or website, <?= $_SERVER['CI_APP_SHORT_NAME'] ?>, you will still be getting a great
+				user experience. We designed
+				our website to be mobile friendly and look great on any device, so you can search usernames on your iPhone or Android and
+				receive the same full-size, HD Instagram profile picture.</p>
+			<p>With over 1 billion active users on Instagram, our advanced search bar allows you to find any account, even if you are
+				unsure of the exact username. Give it a try and see how easy it is to use!</p>
+
+			<h2 class="heading">Why Use <?= $_SERVER['CI_APP_SHORT_NAME'] ?>?</h2>
+			<p>There is more than one reason why someone would want to use <?= $_SERVER['CI_APP_SHORT_NAME'] ?> to download a profile
+				picture. Out of the numerous
+				accounts registered with Instagram, finding your friend’s account could prove more difficult than expected, especially if
+				the profile is set to private. A private account will only provide basic information (if the user chooses to disclose it),
+				a username that might be similar to other accounts, and the profile picture. If the profile picture contains any hint of
+				the user’s identity, even if it’s a tiny profile view of their face, then the picture would be the best way to identify
+				the owner of a private account. You can squint at the picture for hours trying to discern any unique details, or in mere
+				seconds, you can search their username in <?= $_SERVER['CI_APP_SHORT_NAME'] ?> to download their photo and instantly
+				receive the full-size profile
+				picture. If it’s a great photo, you can also save it onto your phone.</p>
+			<p>If users receive a follow from an unidentifiable private account, they will be hesitant in following the account or may
+				even choose to remove the follower if they knew the identity, which is another way <?= $_SERVER['CI_APP_SHORT_NAME'] ?>
+				would help simplify your social
+				media life.</p>
+			<p>Whether you’re trying to find out who recently sent you a follower request or you’re trying to save your crush’s profile
+				picture onto your phone, <?= $_SERVER['CI_APP_SHORT_NAME'] ?> allows you to quickly and conveniently view full-size
+				profile pictures just by searching
+				the username.</p>
+			<p>Thank you for visiting our website. If you have any questions, feel free to Contact Us. Search our website privately and
+				securely to view and zoom in on any <?= $_SERVER['CI_APP_SHORT_NAME'] ?>. No sign in required. Bookmark our webpage to see
+				Instagram profile pictures
+				anytime</p>
+
+			<h2 class="heading">Want to Download Instagram Stories?</a></h3>
+				<p>If you’re trying to download Instagram stories that one of your friends or favorite celebrities posted, there is no way
+					to do it on Instagram. But you can do it easily with our <a href="instagram-tools/story-downloader.html">Instagram Story
+						Download</a> tool. Similar to <a href="storiesig.html">Storiesig</a> you simply enter your friends username and
+					search!</p>
+
+				<h2 class="heading">Storiesig Story Viewer</a></h3>
+					<p>Watch and Download Instagram Stories Anonymously with our <a href="instagram-tools/story-downloader.html">Instagram
+							Story Viewer and Downloader</a>. Use IG Story Downloader for Instagram to keep the best moments on your device
+						forever. To download Instagram Stories simply enter Instagram username and go.</p>
+		</div>
+
+
+		<!-- Top Instagram Profiles -->
+
+		<div class="influencers">
+			<h2 class="heading">Top Instagrammers</h2>
+			<div class="list">
+				<? foreach ($topInstagrammers as $instagrammer): ?>
+					<div class="user">
+						<a class="link" href="instagram/u/<?= @$instagrammer['username'] ?>">
+							<?= @$instagrammer['username'] ?>
+						</a>
+					</div>
+				<? endforeach ?>
+			</div>
+		</div>
+
+		<!-- Recommended Articles -->
+		<div class="articles">
+			<h2 class="heading">Recommended Articles</h2>
+			<div class="list">
+				<div class="article">
+					<a class="link" href="article/7/how-to-disable-comments-on-your-instagram-posts.html">
+						<div class="thumbnail"><img class="img" src="images/articles/How-to-Disable-Comments-on-Your-Instagram-Posts.png"
+																				alt="How to Disable Comments on Your Instagram Posts"></div>
+						<div class="title">How to Disable Comments on Your Instagram Posts</div>
+					</a>
+				</div>
+				<div class="article">
+					<a class="link" href="article/13/how-to-remove-an-instagram-follower-without-blocking-them.html">
+						<div class="thumbnail"><img class="img"
+																				src="images/articles/How-to-Remove-an-Instagram-Follower-without-Blocking-Them.png"
+																				alt="How to Remove an Instagram Follower without Blocking Them"></div>
+						<div class="title">How to Remove an Instagram Follower without Blocking Them</div>
+					</a>
+				</div>
+				<div class="article">
+					<a class="link" href="articles.html">
+						<div class="thumbnail"><img class="img"
+																				src="images/articles/Show-Your-Favorite-Instagram-Filters-First-Hide-the-Ones-You-Dont-Use.png"
+																				alt="Show Your Favorite Instagram Filters First/ Hide the Ones You Don’t Use"></div>
+						<div class="title">Show Your Favorite Instagram Filters First/ Hide the Ones You Don’t Use</div>
+					</a>
+				</div>
+				<div class="article">
+					<a class="link" href="article/16/your-complete-guide-to-reposting-content-on-instagram.html">
+						<div class="thumbnail"><img class="img" src="images/articles/guide-to-reposting-content-on-instagram.jpg"
+																				alt="Your Complete Guide to Reposting Content on Instagram"></div>
+						<div class="title">Your Complete Guide to Reposting Content on Instagram</div>
+					</a>
+				</div>
+				<div class="article">
+					<a class="link" href="article/3/save-and-create-a-collection-of-your-favorite-instagram-posts.html">
+						<div class="thumbnail"><img class="img"
+																				src="images/articles/Save-and-Create-a-Collection-of-Your-Favorite-Instagram-Posts.png"
+																				alt="Save and Create a Collection of Your Favorite Instagram Posts"></div>
+						<div class="title">Save and Create a Collection of Your Favorite Instagram Posts</div>
+					</a>
+				</div>
+				<div class="article">
+					<a class="link" href="article/5/how-to-download-instagram-profile-picture-in-its-original-quality.html">
+						<div class="thumbnail"><img class="img"
+																				src="images/articles/How-to-Download-Instagram-Profile-Picture-in-its-Original-Quality.png"
+																				alt="How to Download Instagram Profile Picture in its Original Quality"></div>
+						<div class="title">How to Download Instagram Profile Picture in its Original Quality</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<? $this->load->view('layout/footer') ?>
