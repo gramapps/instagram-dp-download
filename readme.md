@@ -1,8 +1,6 @@
-###### #############
+## Instagram Downloader
 
-Instagram Downloader
-
-###### #############
+<hr />
 
 You can view public accounts, download high resolution profile picture, videos and images.
 
