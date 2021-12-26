@@ -56,5 +56,13 @@ class InstagramService
 
 		return $result->data;
 	}
+
+
+	public static function userInfo($targetUsername)
+	{
+		$result = s2o(self::makeApiCall('get', '/instagram/user/info', array('targetUsername' => $targetUsername))['body']);
+
+		return $result->data;
+	}
 }
 

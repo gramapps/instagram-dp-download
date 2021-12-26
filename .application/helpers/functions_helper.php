@@ -39,6 +39,15 @@ if (!function_exists('rq')) {
 }
 
 
+if (!function_exists('cleanStr')) {
+
+	function cleanStr($str)
+	{
+		return trim(str_replace(["\n", "\r", "'", '"'], " ", trim($str)));
+	}
+}
+
+
 if (!function_exists('pe')) {
 	/**
 	 * @param $data

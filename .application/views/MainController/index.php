@@ -48,6 +48,26 @@
 		<!-- AD -->
 
 
+		<!-- Top Instagram Profiles -->
+
+		<div class="influencers">
+			<h2 class="heading">Top Instagrammers</h2>
+			<div class="list">
+				<? foreach ($topInstagrammers as $instagrammer): ?>
+					<div class="user">
+						<a class="link" href="instagram/u/<?= @$instagrammer['username'] ?>">
+							<img src="instagram/fetchImage?b64url=<?= base64_encode($instagrammer['sd_profile_picture_url']) ?>"
+									 style="width: 14px; height: 14px; border-radius: 50%; margin: 0px 5px 0px 5px;" />
+							<div style="display: inline-block; font-size: 14px; font-weight: bold;">
+								<?= @$instagrammer['username'] ?>
+							</div>
+						</a>
+					</div>
+				<? endforeach ?>
+			</div>
+		</div>
+
+
 		<div class="content">
 			<h2 class="heading">Download Instagram Profile Pictures</h2>
 			<p>Have you ever wanted to view someone’s profile picture in full size on Instagram but couldn’t figure out how to do it?
@@ -102,21 +122,6 @@
 						forever. To download Instagram Stories simply enter Instagram username and go.</p>
 		</div>
 
-
-		<!-- Top Instagram Profiles -->
-
-		<div class="influencers">
-			<h2 class="heading">Top Instagrammers</h2>
-			<div class="list">
-				<? foreach ($topInstagrammers as $instagrammer): ?>
-					<div class="user">
-						<a class="link" href="instagram/u/<?= @$instagrammer['username'] ?>">
-							<?= @$instagrammer['username'] ?>
-						</a>
-					</div>
-				<? endforeach ?>
-			</div>
-		</div>
 
 		<!-- Recommended Articles -->
 		<div class="articles">
