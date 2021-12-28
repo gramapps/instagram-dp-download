@@ -64,5 +64,21 @@ class InstagramService
 
 		return $result->data;
 	}
+
+
+	public static function mediaInfo($mediaCode)
+	{
+		$result = s2o(self::makeApiCall('get', '/instagram/media/info', array('mediaCode' => $mediaCode))['body']);
+
+		return $result->data;
+	}
+
+
+	public static function mediaComments($mediaCode)
+	{
+		$result = s2o(self::makeApiCall('get', '/instagram/media/comments', array('mediaCode' => $mediaCode))['body']);
+
+		return $result->data;
+	}
 }
 

@@ -9,6 +9,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['instagram']            = 'InstagramController/index';
 $route['instagram/fetchImage'] = 'InstagramController/fetchImage';
+$route['instagram/fetchVideo'] = 'InstagramController/fetchVideo';
 $route['instagram/u/(:any)']   = 'InstagramController/userFeeds/$1';
 $route['instagram/p/(:any)']   = 'InstagramController/feedDetails/$1';
 

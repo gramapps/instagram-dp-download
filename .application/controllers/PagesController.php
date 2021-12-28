@@ -21,22 +21,4 @@ class PagesController extends CI_Controller
 
 		echo '</urlset>';
 	}
-
-
-	public function userFeeds($targetUsername)
-	{
-		$viewData                   = array();
-		$viewData['targetUsername'] = $targetUsername;
-
-		$this->load->view('InstagramController/userFeeds', $viewData);
-	}
-
-
-	public function feedDetails($shortCode)
-	{
-		$viewData              = array();
-		$viewData['shortCode'] = $shortCode;
-
-		$this->load->view('InstagramController/feedDetails', $viewData);
-	}
 }

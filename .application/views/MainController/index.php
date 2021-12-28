@@ -122,59 +122,8 @@
 						forever. To download Instagram Stories simply enter Instagram username and go.</p>
 		</div>
 
+		<? $this->load->view('BlogController/recommendedBlogs') ?>
 
-		<!-- Recommended Articles -->
-		<div class="articles">
-			<h2 class="heading">Recommended Articles</h2>
-			<div class="list">
-				<div class="article">
-					<a class="link" href="article/7/how-to-disable-comments-on-your-instagram-posts.html">
-						<div class="thumbnail"><img class="img" src="images/articles/How-to-Disable-Comments-on-Your-Instagram-Posts.png"
-																				alt="How to Disable Comments on Your Instagram Posts"></div>
-						<div class="title">How to Disable Comments on Your Instagram Posts</div>
-					</a>
-				</div>
-				<div class="article">
-					<a class="link" href="article/13/how-to-remove-an-instagram-follower-without-blocking-them.html">
-						<div class="thumbnail"><img class="img"
-																				src="images/articles/How-to-Remove-an-Instagram-Follower-without-Blocking-Them.png"
-																				alt="How to Remove an Instagram Follower without Blocking Them"></div>
-						<div class="title">How to Remove an Instagram Follower without Blocking Them</div>
-					</a>
-				</div>
-				<div class="article">
-					<a class="link" href="articles.html">
-						<div class="thumbnail"><img class="img"
-																				src="images/articles/Show-Your-Favorite-Instagram-Filters-First-Hide-the-Ones-You-Dont-Use.png"
-																				alt="Show Your Favorite Instagram Filters First/ Hide the Ones You Don’t Use"></div>
-						<div class="title">Show Your Favorite Instagram Filters First/ Hide the Ones You Don’t Use</div>
-					</a>
-				</div>
-				<div class="article">
-					<a class="link" href="article/16/your-complete-guide-to-reposting-content-on-instagram.html">
-						<div class="thumbnail"><img class="img" src="images/articles/guide-to-reposting-content-on-instagram.jpg"
-																				alt="Your Complete Guide to Reposting Content on Instagram"></div>
-						<div class="title">Your Complete Guide to Reposting Content on Instagram</div>
-					</a>
-				</div>
-				<div class="article">
-					<a class="link" href="article/3/save-and-create-a-collection-of-your-favorite-instagram-posts.html">
-						<div class="thumbnail"><img class="img"
-																				src="images/articles/Save-and-Create-a-Collection-of-Your-Favorite-Instagram-Posts.png"
-																				alt="Save and Create a Collection of Your Favorite Instagram Posts"></div>
-						<div class="title">Save and Create a Collection of Your Favorite Instagram Posts</div>
-					</a>
-				</div>
-				<div class="article">
-					<a class="link" href="article/5/how-to-download-instagram-profile-picture-in-its-original-quality.html">
-						<div class="thumbnail"><img class="img"
-																				src="images/articles/How-to-Download-Instagram-Profile-Picture-in-its-Original-Quality.png"
-																				alt="How to Download Instagram Profile Picture in its Original Quality"></div>
-						<div class="title">How to Download Instagram Profile Picture in its Original Quality</div>
-					</a>
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
 

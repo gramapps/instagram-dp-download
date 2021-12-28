@@ -10,7 +10,11 @@
 					<img class="img" src="instagram/fetchImage?b64url=<?= base64_encode($userInfo['sd_profile_picture_url']) ?>">
 				</div>
 				<div class="info">
-					<span class="username"><?= $userInfo['username'] ?></span>
+					<span class="username">
+								<a class="tab selected profile" href="instagram/u/<?= $userInfo['username'] ?>">
+									<?= $userInfo['username'] ?>
+								</a>
+					</span>
 					<span class="text"><?= $userInfo['fullname'] ?></span>
 					<span class="followers"><?= number_format($userInfo['follower_count']) ?> Followers
 						&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -31,10 +35,10 @@
 		</div>
 
 		<div class="results-tabs-instagram">
-			<a class="tab selected profile" href="javascript:;">Profile</a>
-			<a class="tab profile-picture" href="instagram-tools/full-size-downloader/larissamanoela">Full Size</a>
-			<a class="tab stories" href="instagram-tools/story-downloader/larissamanoela">Stories</a>
-			<a class="tab reels" href="instagram-tools/reel-downloader/larissamanoela">Reels</a>
+			<a class="tab selected profile" href="instagram/u/<?= $userInfo['username'] ?>">Profile</a>
+			<a class="tab profile-picture" href="instagram/u/<?= $userInfo['username'] ?>/dp">Full Size</a>
+			<a class="tab stories" href="instagram/u/<?= $userInfo['username'] ?>/stories">Stories</a>
+			<a class="tab reels" href="instagram/u/<?= $userInfo['username'] ?>/reels">Reels</a>
 		</div>
 
 
@@ -67,16 +71,18 @@
 							<div class="thumbnail">
 								<img class="img"
 										 src="instagram/fetchImage?b64url=<?= base64_encode($feed['carousel_data'][0]['sd_image_url']) ?>"
-										 alt="<?= cleanStr($feed['caption']) ?>">
+										 alt="<?= htmlspecialchars(cleanStr($feed['caption'])) ?>">
 							</div>
 							<div class="title">
 								<center>
 									❤ <?= cleanStr($feed['like_count']) ?>
 									&nbsp;&nbsp;
 									💬 <?= cleanStr($feed['comment_count']) ?>
+									&nbsp;&nbsp;
+									🎦 <?= count($feed['carousel_data']) ?>
 								</center>
 
-								<?= cleanStr($feed['caption']) ?>
+								<?= htmlspecialchars(cleanStr($feed['caption'])) ?>
 							</div>
 						</a>
 					</div>
@@ -128,65 +134,8 @@
 
 		</div>
 
+		<? $this->load->view('BlogController/recommendedBlogs') ?>
 
-		<!-- Recommended Articles -->
-		<div class="articles">
-			<h2 class="heading">Recommended Articles</h2>
-			<div class="list">
-				<div class="article">
-					<a class="link" href="article/2/how-to-check-if-you-accidently-liked-any-instagram-posts.html">
-						<div class="thumbnail">
-							<img class="img"
-									 src="https://www.instadp.com/images/articles/How-to-Check-if-You-Accidently-Liked-Any-Instagram-Posts.png"
-									 alt="How to Check if You Accidently Liked Any Instagram Posts">
-						</div>
-						<div class="title">How to Check if You Accidently Liked Any Instagram Posts</div>
-					</a>
-				</div>
-				<div class="article">
-					<a class="link" href="article/9/show-your-favorite-instagram-filters-first/-hide-the-ones-you-don’t-use.html">
-						<div class="thumbnail">
-							<img class="img"
-									 src="https://www.instadp.com/images/articles/Show-Your-Favorite-Instagram-Filters-First-Hide-the-Ones-You-Dont-Use.png"
-									 alt="Show Your Favorite Instagram Filters First/ Hide the Ones You Don’t Use">
-						</div>
-						<div class="title">Show Your Favorite Instagram Filters First/ Hide the Ones You Don’t Use</div>
-					</a>
-				</div>
-				<div class="article">
-					<a class="link" href="article/12/disable-anyone-from-tagging-you-on-instagram-without-your-permission.html">
-						<div class="thumbnail"><img class="img"
-																				src="https://www.instadp.com/images/articles/Disable-Anyone-from-Tagging-You-on-Instagram-without-Your-Permission.png"
-																				alt="Disable Anyone from Tagging You on Instagram without Your Permission"></div>
-						<div class="title">Disable Anyone from Tagging You on Instagram without Your Permission</div>
-					</a>
-				</div>
-				<div class="article">
-					<a class="link" href="article/4/what-are-instagram-story-highlights?.html">
-						<div class="thumbnail"><img class="img"
-																				src="https://www.instadp.com/images/articles/What-are-Instagram-Story-Highlights.png"
-																				alt="What are Instagram Story Highlights?"></div>
-						<div class="title">What are Instagram Story Highlights?</div>
-					</a>
-				</div>
-				<div class="article">
-					<a class="link" href="article/10/how-to-add-line-breaks-into-your-bio-and-captions-on-instagram.html">
-						<div class="thumbnail"><img class="img"
-																				src="https://www.instadp.com/images/articles/How-to-Add-Line-Breaks-into-Your-Bio-and-Captions-on-Instagram.png"
-																				alt="How to Add Line Breaks into Your Bio and Captions on Instagram"></div>
-						<div class="title">How to Add Line Breaks into Your Bio and Captions on Instagram</div>
-					</a>
-				</div>
-				<div class="article">
-					<a class="link" href="article/8/how-to-clear-your-instagram-search-history.html">
-						<div class="thumbnail"><img class="img"
-																				src="https://www.instadp.com/images/articles/How-to-Clear-Your-Instagram-Search-History.png"
-																				alt="How to Clear Your Instagram Search History"></div>
-						<div class="title">How to Clear Your Instagram Search History</div>
-					</a>
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
 
