@@ -66,14 +66,14 @@
 		<div class="section-2">
 			<div class="links">
 				<a href="./">Instagram Downloader</a> |
-				<a href="instagram-tools/profile-picture-downloader">Instagram Profile Picture</a> |
-				<a href="instagram-tools/profile-picture-downloader"><?= $_SERVER['CI_APP_SHORT_NAME'] ?></a> |
-				<a href="instagram-tools/profile-picture-downloader">Profile picture viewer</a> |
-				<a href="instagram-tools/story-downloader">Download Instagram stories</a> |
-				<a href="instagram-tools/story-downloader">Instagram story downloader</a> |
-				<a href="instagram-tools/story-downloader">Instagram story viewer</a> |
-				<a href="instagram-tools/reel-downloader">Instagram reel viewer</a> |
-				<a href="instagram-tools/reel-downloader">Download Instagram reels</a>
+				<a href="instagram/tools/profilePictureDownloader">Instagram Profile Picture</a> |
+				<a href="instagram/tools/profilePictureDownloader"><?= $_SERVER['CI_APP_SHORT_NAME'] ?></a> |
+				<a href="instagram/tools/profilePictureDownloader">Profile picture viewer</a> |
+				<a href="instagram/tools/storyDownloader">Download Instagram stories</a> |
+				<a href="instagram/tools/storyDownloader">Instagram story downloader</a> |
+				<a href="instagram/tools/storyDownloader">Instagram story viewer</a> |
+				<a href="instagram/tools/reelsDownloader">Instagram reel viewer</a> |
+				<a href="instagram/tools/reelsDownloader">Download Instagram reels</a>
 			</div>
 			<div class="disclaimer">
 				<?= $_SERVER['CI_APP_NAME'] ?> is not affiliated with Instagram&trade;<br>We do not host any Instagram content.
