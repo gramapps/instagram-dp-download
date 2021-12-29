@@ -131,16 +131,16 @@ class InstagramController extends CI_Controller
 	}
 
 
-	public function userStories($targetUsername)
+	public function userHighlights($targetUsername)
 	{
 		$viewData                       = array();
 		$viewData['targetUsername']     = $targetUsername;
 		$viewData['userInfo']           = InstagramService::userInfo($targetUsername);
-		$viewData['userFeeds']          = InstagramService::userFeeds($targetUsername);
+		$viewData['userHighlights']     = InstagramService::userHighlights($targetUsername);
 		$viewData['selectedHeaderMenu'] = 'stories';
 		//pe($viewData);
 
-		$this->load->view('InstagramController/userFeeds', ma($viewData));
+		$this->load->view('InstagramController/userHighlights', ma($viewData));
 	}
 
 
@@ -192,10 +192,17 @@ class InstagramController extends CI_Controller
 
 	public function downloadMedia($shortCode)
 	{
-		$viewData                  = array();
-		$viewData['mediaInfo']     = ma(InstagramService::mediaInfo($shortCode));
-		$viewData['mediaComments'] = ma(InstagramService::mediaComments($shortCode))['comments'];
-		$viewData['userInfo']      = InstagramService::userInfo($viewData['mediaInfo']['user']['username']);
+		$viewData = array();
+
+		if (sw($shortCode, 'highlight:')) {
+			$viewData['mediaInfo']          = ma(InstagramService::highlightInfo($shortCode));
+			$viewData['userInfo']           = InstagramService::userInfo($viewData['mediaInfo']['user']['username']);
+			$viewData['selectedHeaderMenu'] = 'highlights';
+		} else {
+			$viewData['mediaInfo']          = ma(InstagramService::mediaInfo($shortCode));
+			$viewData['userInfo']           = InstagramService::userInfo($viewData['mediaInfo']['user']['username']);
+			$viewData['selectedHeaderMenu'] = 'profile';
+		}
 		//pe($viewData);
 
 		$this->load->view('InstagramController/downloadMedia', ma($viewData));

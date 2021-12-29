@@ -30,9 +30,9 @@
 		 href="instagram/u/<?= $userInfo['username'] ?>/dp">
 		Photo
 	</a>
-	<a class="tab <?= $selected == 'stories' ? 'selected' : '' ?> stories"
-		 href="instagram/u/<?= $userInfo['username'] ?>/stories">
-		Stories
+	<a class="tab <?= $selected == 'highlights' ? 'selected' : '' ?> stories"
+		 href="instagram/u/<?= $userInfo['username'] ?>/highlights">
+		Highlights
 	</a>
 	<a class="tab <?= $selected == 'reels' ? 'selected' : '' ?> reels"
 		 href="instagram/u/<?= $userInfo['username'] ?>/reels">

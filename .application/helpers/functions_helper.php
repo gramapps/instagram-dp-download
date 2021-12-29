@@ -203,3 +203,21 @@ if (!function_exists('ew')) {
 		return (substr($string, -$len) === $endString);
 	}
 }
+
+if (!function_exists('edetectRedirectUrl')) {
+	function detectRedirectUrl($url)
+	{
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36');
+		curl_setopt($ch, CURLOPT_HEADER, true);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$responseHeaders = curl_exec($ch);
+		curl_close($ch);
+		if (preg_match_all("/^location: (.*?)$/im", $responseHeaders, $results))
+			return $results[1][0];
+	}
+}
+
+

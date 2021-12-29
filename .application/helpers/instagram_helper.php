@@ -81,6 +81,22 @@ class InstagramService
 	}
 
 
+	public static function userHighlights($targetUsername)
+	{
+		$result = s2o(self::makeApiCall('get', '/instagram/user/highlights', array('targetUsername' => $targetUsername))['body']);
+
+		return $result->data;
+	}
+
+
+	public static function highlightInfo($highlightId)
+	{
+		$result = s2o(self::makeApiCall('get', '/instagram/highlight/videos', array('highlightId' => $highlightId))['body']);
+
+		return $result->data;
+	}
+
+
 	public static function mediaComments($mediaCode)
 	{
 		$result = s2o(self::makeApiCall('get', '/instagram/media/comments', array('mediaCode' => $mediaCode))['body']);

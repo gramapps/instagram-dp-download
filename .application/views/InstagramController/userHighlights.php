@@ -5,26 +5,22 @@
 
 		<? $this->load->view('InstagramController/userInfoHeader', ['userInfo' => $userInfo, 'selected' => $selectedHeaderMenu]) ?>
 
-		<div class="insta-posts <?= in_array($selectedHeaderMenu, ['igtv', 'reels']) ? 'igtv-posts' : '' ?>" style="margin: 10px 0px 0px 0px;">
+		<div class="insta-posts <?= in_array($selectedHeaderMenu, ['igtv', 'reels']) ? 'igtv-posts' : '' ?>"
+				 style="margin: 10px 0px 0px 0px;">
 			<div class="list">
-				<? foreach ($userFeeds as $feed): ?>
+				<? foreach ($userHighlights as $item): ?>
 					<div class="insta-post">
-						<a class="link" href="instagram/p/<?= $feed['short_code'] ?>">
+						<a class="link" href="instagram/download/<?= $item['id'] ?>">
 							<div class="thumbnail">
 								<img class="img"
-										 src="instagram/fetchImage?b64url=<?= base64_encode($feed['carousel_data'][0]['sd_image_url']) ?>"
-										 alt="<?= htmlspecialchars(cleanStr($feed['caption'])) ?>">
+										 src="instagram/fetchImage?b64url=<?= base64_encode($item['sd_image_url']) ?>">
 							</div>
 							<div class="title">
 								<center>
-									❤ <?= cleanStr($feed['like_count']) ?>
-									&nbsp;&nbsp;
-									💬 <?= cleanStr($feed['comment_count']) ?>
-									&nbsp;&nbsp;
-									🎦 <?= count($feed['carousel_data']) ?>
+									<?= htmlspecialchars(cleanStr($item['title'])) ?>
+									<br />
+									🎦 <?= $item['media_count'] ?>
 								</center>
-
-								<?= htmlspecialchars(cleanStr($feed['caption'])) ?>
 							</div>
 						</a>
 					</div>

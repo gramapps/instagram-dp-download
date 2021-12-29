@@ -890,6 +890,12 @@ table.compact > tbody > tr > td {
 	overflow: hidden;
 }
 
+.page .centered .igtv-posts .list .insta-post .link .thumbnail {
+	min-height: 500px;
+}
+
+
+
 .page .centered .insta-posts .list .insta-post .link .thumbnail .img {
 	position: absolute;
 	top: 0;

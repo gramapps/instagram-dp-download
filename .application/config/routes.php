@@ -13,11 +13,11 @@ $route['instagram/fetchVideo'] = 'InstagramController/fetchVideo';
 $route['instagram/download']   = 'InstagramController/download';
 
 
-$route['instagram/u/(:any)']         = 'InstagramController/userFeeds/$1';
-$route['instagram/u/(:any)/dp']      = 'InstagramController/userDp/$1';
-$route['instagram/u/(:any)/stories'] = 'InstagramController/userStories/$1';
-$route['instagram/u/(:any)/reels']   = 'InstagramController/userReels/$1';
-$route['instagram/u/(:any)/igtv']    = 'InstagramController/userIgtv/$1';
+$route['instagram/u/(:any)']            = 'InstagramController/userFeeds/$1';
+$route['instagram/u/(:any)/dp']         = 'InstagramController/userDp/$1';
+$route['instagram/u/(:any)/highlights'] = 'InstagramController/userHighlights/$1';
+$route['instagram/u/(:any)/reels']      = 'InstagramController/userReels/$1';
+$route['instagram/u/(:any)/igtv']       = 'InstagramController/userIgtv/$1';
 
 $route['instagram/p/(:any)'] = 'InstagramController/feedDetails/$1';
 

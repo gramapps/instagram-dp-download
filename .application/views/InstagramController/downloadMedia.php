@@ -8,7 +8,7 @@
 <div class="page">
 	<div class="centered">
 
-		<? $this->load->view('InstagramController/userInfoHeader', ['userInfo' => $userInfo, 'selected' => 'profile']) ?>
+		<? $this->load->view('InstagramController/userInfoHeader', ['userInfo' => $userInfo, 'selected' => $selectedHeaderMenu]) ?>
 
 
 		<!-- START HERE -->
@@ -19,8 +19,39 @@
 				<? foreach ($mediaInfo['carousel_data'] as $datum): ?>
 					<div class="story">
 						<div class="story-post">
-							<img class="story-image"
-									 src="instagram/fetchImage?b64url=<?= base64_encode($datum['sd_image_url']) ?>">
+
+							<div class="fotorama"
+									 data-width="100%"
+									 data-ratio="600/900"
+									 data-minwidth="400"
+									 data-maxwidth="5000"
+									 data-minheight="300"
+									 data-maxheight="100%"
+									 data-loop="true"
+									 data-fit="cover"
+									 data-nav="thumbs">
+
+									<? if (isset($datum['hd_video_url'])): ?>
+										<a href="instagram/fetchVideo?b64url=<?= base64_encode($datum['hd_video_url']) ?>&html=true"
+											 data-href="<?= $datum['hd_video_url'] ?>"
+											 data-video="true">
+											<img src="instagram/fetchImage?b64url=<?= base64_encode($datum['sd_image_url']) ?>" style="width: 100%;" />
+										</a>
+									<? elseif (isset($datum['sd_video_url'])): ?>
+										<a href="instagram/fetchVideo?b64url=<?= base64_encode($datum['sd_video_url']) ?>"
+											 data-href="<?= $datum['sd_video_url'] ?>"
+											 data-video="true">
+											<img src="instagram/fetchImage?b64url=<?= base64_encode($datum['sd_image_url']) ?>" style="width: 100%;" />
+										</a>
+
+									<? else: ?>
+										<img src="instagram/fetchImage?b64url=<?= base64_encode($datum['sd_image_url']) ?>"
+												 data-href="<?= $datum['hd_image_url'] ?>"
+												 style="width: 100%;" />
+
+									<? endif ?>
+
+							</div>
 						</div>
 
 
