@@ -53,10 +53,14 @@ if (!function_exists('pe')) {
 	 * @param $data
 	 * print and exit
 	 */
-	function pe($data)
+	function pe($data, $varDump = false)
 	{
 		echo "<pre>";
-		print_r($data);
+
+		if ($varDump === true)
+			var_dump($data);
+		else
+			print_r($data);
 		exit;
 	}
 }
@@ -219,5 +223,25 @@ if (!function_exists('edetectRedirectUrl')) {
 			return $results[1][0];
 	}
 }
+
+
+if (!function_exists('darkmode')) {
+	function darkmode()
+	{
+		$darkMode = json_decode(urldecode(get_cookie('dark_mode')));
+
+		if (is_null($darkMode)) {
+			return 'darkmode';
+		}
+
+		if ((int)@$darkMode[0] == 0) {
+			return '';
+		} else {
+			return 'darkmode';
+		}
+	}
+}
+
+
 
 

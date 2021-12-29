@@ -19,7 +19,7 @@
 		<div class="text">Dark Mode</div>
 		<div class="button">
 			<label class="switch">
-				<input class="checkbox" type="checkbox" checked>
+				<input class="checkbox" type="checkbox" <?= darkmode() == 'darkmode' ? 'checked' : '' ?>>
 				<span class="slider round"></span>
 			</label>
 		</div>

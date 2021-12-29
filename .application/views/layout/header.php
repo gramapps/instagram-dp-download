@@ -33,7 +33,7 @@
 </head>
 
 
-<body class="darkmode">
+<body class="<?= darkmode() ?>">
 
 
 <!-- Header -->
