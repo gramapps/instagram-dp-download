@@ -31,25 +31,25 @@
 									 data-fit="cover"
 									 data-nav="thumbs">
 
-									<? if (isset($datum['hd_video_url'])): ?>
-										<a href="instagram/fetchVideo?b64url=<?= base64_encode($datum['hd_video_url']) ?>&html=true"
-											 data-href="<?= $datum['hd_video_url'] ?>"
-											 data-video="true">
-											<img src="instagram/fetchImage?b64url=<?= base64_encode($datum['sd_image_url']) ?>" style="width: 100%;" />
-										</a>
-									<? elseif (isset($datum['sd_video_url'])): ?>
-										<a href="instagram/fetchVideo?b64url=<?= base64_encode($datum['sd_video_url']) ?>"
-											 data-href="<?= $datum['sd_video_url'] ?>"
-											 data-video="true">
-											<img src="instagram/fetchImage?b64url=<?= base64_encode($datum['sd_image_url']) ?>" style="width: 100%;" />
-										</a>
+								<? if (isset($datum['hd_video_url'])): ?>
+									<a href="instagram/fetchVideo?b64url=<?= base64_encode($datum['hd_video_url']) ?>&html=true"
+										 data-href="<?= $datum['hd_video_url'] ?>"
+										 data-video="true">
+										<img src="instagram/fetchImage?b64url=<?= base64_encode($datum['sd_image_url']) ?>" style="width: 100%;" />
+									</a>
+								<? elseif (isset($datum['sd_video_url'])): ?>
+									<a href="instagram/fetchVideo?b64url=<?= base64_encode($datum['sd_video_url']) ?>"
+										 data-href="<?= $datum['sd_video_url'] ?>"
+										 data-video="true">
+										<img src="instagram/fetchImage?b64url=<?= base64_encode($datum['sd_image_url']) ?>" style="width: 100%;" />
+									</a>
 
-									<? else: ?>
-										<img src="instagram/fetchImage?b64url=<?= base64_encode($datum['sd_image_url']) ?>"
-												 data-href="<?= $datum['hd_image_url'] ?>"
-												 style="width: 100%;" />
+								<? else: ?>
+									<img src="instagram/fetchImage?b64url=<?= base64_encode($datum['sd_image_url']) ?>"
+											 data-href="<?= $datum['hd_image_url'] ?>"
+											 style="width: 100%;" />
 
-									<? endif ?>
+								<? endif ?>
 
 							</div>
 						</div>
@@ -59,13 +59,13 @@
 							<div class="timestamp" style="font-weight: bold;">Content: Video</div>
 
 							<a target="_blank" class="download-btn"
-								 href="instagram/download?fileName=<?= $userInfo['username'] . '_vidoe_' . md5($datum['hd_video_url']) ?>&b64url=<?= base64_encode($datum['hd_video_url']) ?>">Download</a>
+								 href="instagram/download?fileName=<?= $userInfo['username'] . '_video_' . md5($datum['hd_video_url']) ?>&b64url=<?= base64_encode($datum['hd_video_url']) ?>">Download</a>
 
 						<? elseif (isset($datum['sd_video_url'])): ?>
 							<div class="timestamp" style="font-weight: bold;">Content: Video</div>
 
 							<a target="_blank" class="download-btn"
-								 href="instagram/download?fileName=<?= $userInfo['username'] . '_vidoe_' . md5($datum['sd_video_url']) ?>&b64url=<?= base64_encode($datum['sd_video_url']) ?>">Download</a>
+								 href="instagram/download?fileName=<?= $userInfo['username'] . '_video_' . md5($datum['sd_video_url']) ?>&b64url=<?= base64_encode($datum['sd_video_url']) ?>">Download</a>
 
 						<? else: ?>
 							<div class="timestamp" style="font-weight: bold;">Content: Image</div>

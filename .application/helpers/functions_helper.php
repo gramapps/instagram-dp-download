@@ -131,9 +131,9 @@ if (!function_exists('o2s')) {
 
 if (!function_exists('instagramUsername')) {
 
-	function instagramUsername($str)
+	function instagramUsername($str, $maxLength = 30)
 	{
-		return substr(preg_replace("/[^a-zA-Z0-9._]+/", "", $str), 0, 30);
+		return substr(preg_replace("/[^a-zA-Z0-9._]+/", "", $str), 0, $maxLength);
 	}
 }
 

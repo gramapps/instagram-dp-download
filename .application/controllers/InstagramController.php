@@ -15,7 +15,7 @@ class InstagramController extends CI_Controller
 		$fileExtension = '.png';
 
 		$fileName = $this->input->get('fileName', true);
-		$fileName = url_title(instagramUsername($fileName), '_');
+		$fileName = url_title(instagramUsername($fileName, 128), '_');
 		$fileName = url_title($_SERVER['CI_APP_SHORT_NAME'], '_')
 			. "_"
 			. ((strlen($fileName) > 0) ? $fileName . '_' : '')
