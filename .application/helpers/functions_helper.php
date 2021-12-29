@@ -124,3 +124,82 @@ if (!function_exists('o2s')) {
 	}
 }
 
+
+if (!function_exists('instagramUsername')) {
+
+	function instagramUsername($str)
+	{
+		return substr(preg_replace("/[^a-zA-Z0-9._]+/", "", $str), 0, 30);
+	}
+}
+
+
+if (!function_exists('instagramMediaCode')) {
+
+	function instagramMediaCode($str)
+	{
+		return substr(preg_replace("/[^a-zA-Z0-9._-]+/", "", $str), 0, 11);
+	}
+}
+
+
+if (!function_exists('redir')) {
+
+	function redir($url)
+	{
+		header('Location: ' . $url);
+		exit;
+	}
+}
+
+if (!function_exists('recaptchaValidate')) {
+
+	function recaptchaValidate($recaptchaResponse)
+	{
+		$response = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret="
+			. $_SERVER['CI_RECAPTCHA_PRIV_KEY']
+			. "&response=" . $recaptchaResponse
+			. "&remoteip=" . $_SERVER['REMOTE_ADDR']), true);
+
+		if ($response['success'] == false)
+			return false;
+
+		return true;
+	}
+}
+
+
+if (!function_exists('sw')) {
+
+	/********************
+	 * sw: starts with
+	 *
+	 * @param $string string
+	 * @param $startString string
+	 * @return bool
+	 */
+	function sw($string, $startString)
+	{
+		$len = strlen($startString);
+		return (substr($string, 0, $len) === $startString);
+	}
+}
+
+if (!function_exists('ew')) {
+
+	/********************
+	 * ew: ends with
+	 *
+	 * @param $string string
+	 * @param $endString string
+	 * @return bool
+	 */
+	function ew($string, $endString)
+	{
+		$len = strlen($endString);
+		if ($len == 0) {
+			return true;
+		}
+		return (substr($string, -$len) === $endString);
+	}
+}

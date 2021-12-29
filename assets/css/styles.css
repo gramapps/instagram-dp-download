@@ -282,7 +282,7 @@ a {
 .nav {
 	float: left;
 	width: 100%;
-	height: 44px;
+	height: 50px;
 	margin: 0;
 	padding: 0 10px 0 10px;
 	background: #FFFFFF;
@@ -319,6 +319,34 @@ body.scrolled .nav {
 	background: url(../images/ui-sprite.svg) 2px 2px no-repeat;
 }
 
+.nav .centered form {
+	display: inline-block;
+	width: 100%;
+}
+
+.nav .centered table {
+	width: 100%;
+}
+
+table.compact {
+	margin: 0px;
+	padding: 0px;
+}
+
+table.compact > tbody {
+	margin: 0px;
+	padding: 0px;
+}
+
+table.compact > tbody > tr {
+	margin: 0px;
+	padding: 0px;
+}
+
+table.compact > tbody > tr > td {
+	margin: 0px;
+	padding: 0px;
+}
 
 /* Footer ----------------------------------- */
 .footer {
@@ -1575,7 +1603,7 @@ body.sb-toggled .sidebar {
 }
 
 .results-tabs-instagram .tab.profile:before {
-	background-position: 0 -520px;
+	background-position: 0 -480px;
 }
 
 .results-tabs-instagram .tab.selected.profile-picture:before {
@@ -1583,7 +1611,7 @@ body.sb-toggled .sidebar {
 }
 
 .results-tabs-instagram .tab.profile-picture:before {
-	background-position: 0 -600px;
+	background-position: 0 -560px;
 }
 
 .results-tabs-instagram .tab.selected.stories:before {
@@ -1591,7 +1619,7 @@ body.sb-toggled .sidebar {
 }
 
 .results-tabs-instagram .tab.stories:before {
-	background-position: 0 -680px;
+	background-position: 0 -640px;
 }
 
 .results-tabs-instagram .tab.selected.reels:before {
@@ -1599,7 +1627,15 @@ body.sb-toggled .sidebar {
 }
 
 .results-tabs-instagram .tab.reels:before {
-	background-position: 0 -760px;
+	background-position: 0 -720px;
+}
+
+.results-tabs-instagram .tab.selected.igtv:before {
+	background-position: 0 -76px;
+}
+
+.results-tabs-instagram .tab.igtv:before {
+	background-position: 0 -76px;
 }
 
 .user-details {
@@ -3168,6 +3204,11 @@ body.darkmode {
 	background: #000000;
 }
 
+body.darkmode input {
+	background: #000000;
+	color: #ffffff;
+}
+
 body.darkmode, body.darkmode input, body.darkmode textarea, body.darkmode button, body.darkmode select, body.darkmode a {
 	color: #FFFFFF;
 }
@@ -3609,4 +3650,86 @@ body.darkmode .page .centered .invisible-verify .loader .icon {
 /* -------- DARK MODE -- [END] ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 
+.btn {
+	position: relative;
 
+	display: block;
+	margin: 30px auto;
+	padding: 0;
+
+	overflow: hidden;
+
+	border-width: 0;
+	outline: none;
+	border-radius: 2px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+	background-color: #2ecc71;
+	color: #ecf0f1;
+
+	transition: background-color .3s;
+}
+
+.btn:hover, .btn:focus {
+	background-color: #27ae60;
+}
+
+.btn > * {
+	position: relative;
+}
+
+.btn span {
+	display: block;
+	padding: 12px 24px;
+}
+
+.btn:before {
+	content: "";
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	display: block;
+	width: 0;
+	padding-top: 0;
+
+	border-radius: 100%;
+
+	background-color: rgba(236, 240, 241, .3);
+
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.btn:active:before {
+	width: 120%;
+	padding-top: 120%;
+
+	transition: width .2s ease-out, padding-top .2s ease-out;
+}
+
+/* Styles, not important */
+.btn, .btn:before, .btn:after {
+	box-sizing: border-box;
+}
+
+
+.btn.orange {
+	background-color: #e67e22;
+}
+
+.btn.orange:hover, .btn.orange:focus {
+	background-color: #d35400;
+}
+
+.btn.red {
+	background-color: #e74c3c;
+}
+
+.btn.red:hover, .btn.red:focus {
+	background-color: #c0392b;
+}

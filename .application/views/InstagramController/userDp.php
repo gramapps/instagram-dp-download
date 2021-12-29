@@ -5,34 +5,18 @@
 
 		<? $this->load->view('InstagramController/userInfoHeader', ['userInfo' => $userInfo, 'selected' => $selectedHeaderMenu]) ?>
 
-		<div class="insta-posts" style="margin: 10px 0px 0px 0px;">
-			<div class="list">
-				<? foreach ($userFeeds as $feed): ?>
-					<div class="insta-post">
-						<a class="link" href="instagram/p/<?= $feed['short_code'] ?>">
-							<div class="thumbnail">
-								<img class="img"
-										 src="instagram/fetchImage?b64url=<?= base64_encode($feed['carousel_data'][0]['sd_image_url']) ?>"
-										 alt="<?= htmlspecialchars(cleanStr($feed['caption'])) ?>">
-							</div>
-							<div class="title">
-								<center>
-									❤ <?= cleanStr($feed['like_count']) ?>
-									&nbsp;&nbsp;
-									💬 <?= cleanStr($feed['comment_count']) ?>
-									&nbsp;&nbsp;
-									🎦 <?= count($feed['carousel_data']) ?>
-								</center>
+		<div class="fullsize-profile-picture verified">
 
-								<?= htmlspecialchars(cleanStr($feed['caption'])) ?>
-							</div>
-						</a>
-					</div>
-				<? endforeach ?>
-
+			<div class="fullsize">
+				<img src="instagram/fetchImage?b64url=<?= base64_encode($userInfo['sd_profile_picture_url']) ?>" class="img">
+				<a target="_blank" class="download-btn"
+					 href="instagram/download?fileName=<?= $userInfo['username'] ?>&b64url=<?= base64_encode($userInfo['hd_profile_picture_url']) ?>"
+					 download="<?= $userInfo['username'] ?>.png">
+					Download
+				</a>
 			</div>
-		</div>
 
+		</div>
 
 		<div class="content">
 

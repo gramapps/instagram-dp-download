@@ -27,7 +27,8 @@
 	<script src="assets/js/jquery.js?<?= rq() ?>"></script>
 	<script src="assets/js/functions.js?<?= rq() ?>"></script>
 	<script src="assets/js/cookie.js?<?= rq() ?>"></script>
-	<script src="https://www.google.com/recaptcha/api.js"></script>
+
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
 
@@ -44,8 +45,31 @@
 
 <header class="nav">
 	<div class="centered">
-		<a class="logo-btn" href="./"><?= $_SERVER['CI_APP_SHORT_NAME'] ?></a>
-		<div class="menu-btn"></div>
+		<table class="compact">
+			<tbody>
+			<tr>
+				<td>
+					<a href="./">
+						<img src="assets/images/home.png" style="width: 32px; margin:0px 0px 0px 0px;">
+					</a>
+				</td>
+				<td width="50%">
+					<!--
+					<form method="get" action="search">
+						<input type="text" name="q">
+						<button type="submit" class="btn red">
+							🔎
+						</button>
+					</form>
+					-->
+				</td>
+				<td>
+					<div class="menu-btn"></div>
+
+				</td>
+			</tr>
+			</tbody>
+		</table>
 	</div>
 </header>
 

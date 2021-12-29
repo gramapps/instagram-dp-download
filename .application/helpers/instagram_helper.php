@@ -57,6 +57,13 @@ class InstagramService
 		return $result->data;
 	}
 
+	public static function userIgtv($targetUsername)
+	{
+		$result = s2o(self::makeApiCall('get', '/instagram/user/igtv', array('targetUsername' => $targetUsername))['body']);
+
+		return $result->data;
+	}
+
 
 	public static function userInfo($targetUsername)
 	{
