@@ -65,7 +65,7 @@
 			<h2 class="heading">Want to Download Instagram Stories?</a></h3>
 				<p>If you’re trying to download Instagram stories that one of your friends or favorite celebrities posted, there is no way
 					to do it on Instagram. But you can do it easily with our <a href="instagram/tools/storyDownloader">Instagram Story
-						Download</a> tool. Similar to <a href="storiesig.html">Storiesig</a> you simply enter your friends username and
+						Download</a> tool. You simply enter your friends username and
 					search!</p>
 
 				<h2 class="heading">Storiesig Story Viewer</a></h3>

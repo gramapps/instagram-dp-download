@@ -27,15 +27,15 @@
 				may even help fix issues users didn’t even realize they had—like identifying a follower solely based on their tiny profile
 				picture. Our website solves this issue by providing tools to view and download profile pictures and other content. Users
 				can view any content on public profiles, view their stories, download reels, and download full-sized profile pictures.</p>
-			<p>If you're looking for a safe and reliable way to view and download content from Instagram profiles, then Instadp is the
+			<p>If you're looking for a safe and reliable way to view and download content from Instagram profiles, then <?= $_SERVER['CI_APP_SHORT_NAME'] ?> is the
 				tool for you.</p>
 
-			<h2 class="heading">How to use InstaDP Profile Viewer</h2>
+			<h2 class="heading">How to use <?= $_SERVER['CI_APP_SHORT_NAME'] ?> Profile Viewer</h2>
 			<p>We made the process as simple as possible. To search for any Instagram account, enter the username or paste the link from
 				a post into the search bar at the top of our webpage. The account loads instantly, and from there, you can anonymously
 				browse their profile and view stories, highlights and reels.</p>
 
-			<h2 class="heading">Why Use InstaDP?</h2>
+			<h2 class="heading">Why Use <?= $_SERVER['CI_APP_SHORT_NAME'] ?>?</h2>
 			<p>Instagram is a social media platform that allows users to take pictures and post them online for others to see. The app
 				is primarily used for sharing photos, although it has recently added features to include videos and reels. Posting and
 				sharing videos and reels on Instagram continues to rise in popularity among its users.</p>
@@ -43,7 +43,7 @@
 				quality, professional pictures and creative videos on Instagram, as well as blurry pictures of someone’s daily life; the
 				options are endless and left up to the user.</p>
 			<p>With the endless amount of creative and entertaining content, some users want to share it outside of Instagram or save
-				their favorite content for offline viewing. InstaDP will allow you to save any public content straight to your device.
+				their favorite content for offline viewing. <?= $_SERVER['CI_APP_SHORT_NAME'] ?> will allow you to save any public content straight to your device.
 				Whether you’re saving videos to your desktop, iOS or Android device, we have the right tools for you.</p>
 
 			<h2 class="heading">Can I see private accounts?</h2>
