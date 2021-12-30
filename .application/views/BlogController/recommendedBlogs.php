@@ -1,3 +1,4 @@
+<!--
 <div class="articles">
 	<h2 class="heading">Latest Blogs</h2>
 	<div class="list">
@@ -59,3 +60,4 @@
 		</div>
 	</div>
 </div>
+-->
