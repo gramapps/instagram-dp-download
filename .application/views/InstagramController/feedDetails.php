@@ -13,8 +13,8 @@
 		<div class="insta-carousel-container" style="margin: 10px 0px 0px 0px;">
 			<div class="fotorama"
 					 data-width="100%"
-					 data-ratio="600/900"
-					 data-minwidth="400"
+					 data-ratio="600/1000"
+					 data-minwidth="300"
 					 data-maxwidth="5000"
 					 data-minheight="300"
 					 data-maxheight="100%"

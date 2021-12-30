@@ -22,7 +22,7 @@
 
 							<div class="fotorama"
 									 data-width="100%"
-									 data-ratio="600/900"
+									 data-ratio="600/1000"
 									 data-minwidth="300"
 									 data-maxwidth="5000"
 									 data-minheight="300"
