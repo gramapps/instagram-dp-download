@@ -22,7 +22,7 @@ class InstagramToolsController extends CI_Controller
 
 		$oldStrings = ['Ğ', 'Ü', 'Ş', 'İ', 'Ö', 'Ç', 'I', 'ğ', 'ü', 'ş', 'i', 'ö', 'ç', 'ı'];
 		$newStrings = ['G', 'U', 'S', 'I', 'O', 'C', 'I', 'g', 'u', 's', 'i', 'o', 'c', 'i'];
-		$q          = strtolower(str_replace($oldStrings, $newStrings, $q));
+		$q          = str_replace($oldStrings, $newStrings, $q);
 
 		if (!recaptchaValidate($input['g-recaptcha-response']))
 			redir($_SERVER['HTTP_REFERER']);
@@ -45,48 +45,21 @@ class InstagramToolsController extends CI_Controller
 
 			$target = null;
 
-			// parse highlight video
-			// example url:
-			// https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTA4OTI0OTc2Mjc1NTM0?story_media_id=2711715311770809094_233146678&utm_medium=copy_link
-			if (sw($q, 'https://www.instagram.com/s/')) {
-				$parseUrl   = parse_url($q);
-				$parsedPath = explode('/', $parseUrl['path']);
-				if (strlen(@$parsedPath[2]) == 0)
-					redir(base_url('instagram/tools/' . $cmd));
+			$parseUrl   = parse_url($q);
+			$parsedPath = array_reverse(explode('/', $parseUrl['path']));
+			$parsedPath = array_values(array_filter($parsedPath, function ($val, $key) {
+				return strlen(trim($val)) > 0;
+			}, ARRAY_FILTER_USE_BOTH));
 
-				// you must specify fully correct url. Otherwise instagram is redirecting correct url and this is broking algorithm.
-				$highlightUrl     = 'https://www.instagram.com/s/' . $parsedPath[2] . '/';
-				$detectedRedirUrl = detectRedirectUrl($highlightUrl);
-				$parseUrl         = parse_url($detectedRedirUrl);
-				$parsedPath       = explode('/', $parseUrl['path']);
-
-				if (is_numeric(@$parsedPath[3]))
-					redir(base_url('instagram/download/highlight:' . $parsedPath[3]));
-
-				redir(base_url('instagram/tools/' . $cmd));
-			} elseif (sw($q, 'https://www.instagram.com/stories/')) {
-				$parseUrl   = parse_url($q);
-				$parsedPath = explode('/', $parseUrl['path']);
-
-				if (is_numeric(@$parsedPath[3]))
-					redir(base_url('instagram/download/highlight:' . $parsedPath[3]));
-
+			if (strlen(@$parsedPath[0]) == 0)
 				redir(base_url('instagram/tools/' . $cmd));
 
-			} elseif (sw($q, 'https://') && (filter_var($q, FILTER_VALIDATE_URL))) {
-				$parseUrl   = parse_url($q);
-				$parsedPath = explode('/', $parseUrl['path']);
-				if (strlen(@$parsedPath[2]) == 0)
-					redir(base_url('instagram/tools/' . $cmd));
+			$target = $parsedPath[0];
 
-				$parsedTarget = ($parsedPath[2] == 'reel') ? $parsedPath[3] : $parsedPath[2];
-				$target       = instagramMediaCode($parsedTarget);
-
-			} else {
-				$target = instagramMediaCode($q);
-			}
-
-			redir(base_url('instagram/download/' . $target));
+			if (is_numeric($target))
+				redir(base_url('instagram/download/highlight:' . $target));
+			else
+				redir(base_url('instagram/download/' . $target));
 		}
 
 		//pe($input);
