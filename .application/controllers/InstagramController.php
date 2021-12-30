@@ -137,7 +137,7 @@ class InstagramController extends CI_Controller
 		$viewData['targetUsername']     = $targetUsername;
 		$viewData['userInfo']           = InstagramService::userInfo($targetUsername);
 		$viewData['userHighlights']     = InstagramService::userHighlights($targetUsername);
-		$viewData['selectedHeaderMenu'] = 'stories';
+		$viewData['selectedHeaderMenu'] = 'highlights';
 		//pe($viewData);
 
 		$this->load->view('InstagramController/userHighlights', ma($viewData));
