@@ -9,7 +9,7 @@ class InstagramService
 		$data           = ma($data);
 		$data['apikey'] = @$_SERVER['IGDATA_APIKEY'];
 
-		$baseUrl = ENVIRONMENT == 'development' ? 'https://igdata-backend.host' : 'https://igdata.net';
+		$baseUrl = ENVIRONMENT == 'development' ? 'https://igdata-backend.host' : 'https://api.igdata.net/v1';
 
 		$lastUrl = $baseUrl . $cmd;
 
