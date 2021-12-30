@@ -20,7 +20,9 @@ class InstagramToolsController extends CI_Controller
 		$q     = $input['q'];
 		$cmd   = $input['cmd'];
 
-		$q = strtolower(str_replace(['ĞÜŞİÖÇIğüşiöçı'], ['GUSIOCIgusioci'], $q));
+		$oldStrings = ['Ğ', 'Ü', 'Ş', 'İ', 'Ö', 'Ç', 'I', 'ğ', 'ü', 'ş', 'i', 'ö', 'ç', 'ı'];
+		$newStrings = ['G', 'U', 'S', 'I', 'O', 'C', 'I', 'g', 'u', 's', 'i', 'o', 'c', 'i'];
+		$q          = strtolower(str_replace($oldStrings, $newStrings, $q));
 
 		if (!recaptchaValidate($input['g-recaptcha-response']))
 			redir($_SERVER['HTTP_REFERER']);

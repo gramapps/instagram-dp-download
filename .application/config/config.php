@@ -158,7 +158,7 @@ $config['composer_autoload'] = FALSE;
 | DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
 |
 */
-$config['permitted_uri_chars'] = 'a-z 0-9ĞÜŞİÖÇIğüşiöçı~%.:_\-';
+$config['permitted_uri_chars'] = 'a-z A-Z 0-9 ĞÜŞİÖÇIğüşiöçı ~%.:_\-';
 
 /*
 |--------------------------------------------------------------------------
