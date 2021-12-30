@@ -24,7 +24,7 @@
 				<? foreach ($mediaInfo['carousel_data'] as $datum): ?>
 
 					<? if (isset($datum['hd_video_url'])): ?>
-						<a href="instagram/fetchVideo?b64url=<?= base64_encode($datum['hd_video_url']) ?>&html=true"
+						<a href="instagram/fetchVideo?b64url=<?= base64_encode($datum['sd_video_url']) ?>&html=true"
 							 data-href="<?= $datum['hd_video_url'] ?>"
 							 data-video="true">
 							<img src="instagram/fetchImage?b64url=<?= base64_encode($datum['sd_image_url']) ?>" style="width: 100%;" />
