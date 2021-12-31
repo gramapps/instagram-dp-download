@@ -28,22 +28,22 @@ class InstagramToolsController extends CI_Controller
 			redir($_SERVER['HTTP_REFERER']);
 
 		if ($cmd === 'profilePictureDownloader') {
-			$target = null;
+			$targetUsername = null;
 			if (sw($q, 'https://') && (filter_var($q, FILTER_VALIDATE_URL))) {
 				$parseUrl   = parse_url($q);
 				$parsedPath = explode('/', $parseUrl['path']);
 				if (strlen(@$parsedPath[1]) == 0)
 					redir(base_url('instagram/tools/' . $cmd));
 
-				$target = instagramUsername($parsedPath[1]);
+				$targetUsername = instagramUsername($parsedPath[1]);
 			} else {
-				$target = instagramUsername($q);
+				$targetUsername = instagramUsername($q);
 			}
 
-			redir(base_url('instagram/u/' . $target));
+			redir(base_url('instagram/u/' . $targetUsername));
 		} elseif (in_array($cmd, ['reelsDownloader', 'videoDownloader', 'photoDownloader', 'storyDownloader'])) {
 
-			$target = null;
+			$targetId = null;
 
 			$parseUrl   = parse_url($q);
 			$parsedPath = array_reverse(explode('/', $parseUrl['path']));
@@ -51,15 +51,15 @@ class InstagramToolsController extends CI_Controller
 				return strlen(trim($val)) > 0;
 			}, ARRAY_FILTER_USE_BOTH));
 
-			if (strlen(@$parsedPath[0]) == 0)
+			$targetId = array_shift($parsedPath);
+
+			if (strlen($targetId) == 0)
 				redir(base_url('instagram/tools/' . $cmd));
 
-			$target = $parsedPath[0];
-
-			if (is_numeric($target))
-				redir(base_url('instagram/download/highlight:' . $target));
+			if (is_numeric($targetId))
+				redir(base_url('instagram/download/highlight:' . $targetId));
 			else
-				redir(base_url('instagram/download/' . $target));
+				redir(base_url('instagram/download/' . $targetId));
 		}
 
 		//pe($input);
