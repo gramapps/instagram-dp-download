@@ -204,7 +204,6 @@ class InstagramController extends CI_Controller
 			$viewData['userInfo']           = InstagramService::userInfo($viewData['mediaInfo']['user']['username']);
 			$viewData['selectedHeaderMenu'] = 'profile';
 		}
-		//pe($viewData);
 
 		$this->load->view('InstagramController/downloadMedia', ma($viewData));
 	}

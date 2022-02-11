@@ -434,7 +434,7 @@ if ( ! function_exists('show_404'))
 	 * @param	bool
 	 * @return	void
 	 */
-	function show_404($page = '', $log_error = TRUE)
+	function show_404($page = '', $log_error = false)
 	{
 		$_error =& load_class('Exceptions', 'core');
 		$_error->show_404($page, $log_error);
