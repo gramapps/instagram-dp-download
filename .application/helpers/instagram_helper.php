@@ -83,6 +83,14 @@ class InstagramService
 	}
 
 
+	public static function storyInfo($mediaCode)
+	{
+		$result = s2o(self::makeApiCall('get', '/instagram/story/info', array('mediaCode' => $mediaCode))['body']);
+
+		return $result->data;
+	}
+
+
 	public static function userHighlights($targetUsername)
 	{
 		$result = s2o(self::makeApiCall('get', '/instagram/user/highlights', array('targetUsername' => $targetUsername))['body']);

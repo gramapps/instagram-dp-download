@@ -160,6 +160,9 @@ if (!function_exists('recaptchaValidate')) {
 
 	function recaptchaValidate($recaptchaResponse)
 	{
+		if ($_SERVER['CI_ENV'] == 'development')
+			return true;
+
 		$response = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret="
 			. $_SERVER['CI_RECAPTCHA_PRIV_KEY']
 			. "&response=" . $recaptchaResponse

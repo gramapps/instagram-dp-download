@@ -165,6 +165,7 @@ class InstagramController extends CI_Controller
 		$this->load->view('InstagramController/userFeeds', ma($viewData));
 	}
 
+
 	public function userIgtv($targetUsername)
 	{
 		$viewData                       = array();
@@ -204,6 +205,19 @@ class InstagramController extends CI_Controller
 			$viewData['selectedHeaderMenu'] = 'profile';
 		}
 		//pe($viewData);
+
+		$this->load->view('InstagramController/downloadMedia', ma($viewData));
+	}
+
+
+	public function downloadStory($shortCode)
+	{
+		$viewData = array();
+
+		$viewData['mediaInfo']          = ma(InstagramService::storyInfo($shortCode));
+		$viewData['userInfo']           = InstagramService::userInfo($viewData['mediaInfo']['user']['username']);
+		$viewData['selectedHeaderMenu'] = 'profile';
+		pe($viewData);
 
 		$this->load->view('InstagramController/downloadMedia', ma($viewData));
 	}

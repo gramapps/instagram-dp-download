@@ -21,8 +21,11 @@ $route['instagram/u/(:any)/igtv']       = 'InstagramController/userIgtv/$1';
 
 $route['instagram/p/(:any)'] = 'InstagramController/feedDetails/$1';
 
-$route['instagram/download/(:any)'] = 'InstagramController/downloadMedia/$1';
-
+$route['instagram/download/media/(:any)']     = 'InstagramController/downloadMedia/$1';
+$route['instagram/download/story/(:any)']     = 'InstagramController/downloadStory/$1';
+$route['instagram/download/reel/(:any)']      = 'InstagramController/downloadReel/$1';
+$route['instagram/download/tv/(:any)']        = 'InstagramController/downloadTv/$1';
+$route['instagram/download/highlight/(:any)'] = 'InstagramController/downloadHighlight/$1';
 
 $route['instagram/tools/parseSearch'] = 'InstagramToolsController/parseSearch';
 $route['instagram/tools/(:any)']      = 'InstagramToolsController/downloader/$1';

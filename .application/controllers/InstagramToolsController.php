@@ -17,8 +17,8 @@ class InstagramToolsController extends CI_Controller
 	public function parseSearch()
 	{
 		$input = ma($this->input->post(null, true));
-		$q     = $input['q'];
-		$cmd   = $input['cmd'];
+		$q     = @$input['q'];
+		$cmd   = @$input['cmd'];
 
 		$oldStrings = ['Ğ', 'Ü', 'Ş', 'İ', 'Ö', 'Ç', 'I', 'ğ', 'ü', 'ş', 'i', 'ö', 'ç', 'ı'];
 		$newStrings = ['G', 'U', 'S', 'I', 'O', 'C', 'I', 'g', 'u', 's', 'i', 'o', 'c', 'i'];
@@ -51,15 +51,30 @@ class InstagramToolsController extends CI_Controller
 				return strlen(trim($val)) > 0;
 			}, ARRAY_FILTER_USE_BOTH));
 
-			$targetId = array_shift($parsedPath);
+			$targetId  = trim(array_shift($parsedPath));
+			$mediaType = 'media';
+			if ((@$parsedPath[0] == 'stories') || (@$parsedPath[1] == 'stories'))
+				$mediaType = 'story';
+			elseif ((@$parsedPath[0] == 'reel') || (@$parsedPath[1] == 'reel'))
+				$mediaType = 'reel';
+			elseif ((@$parsedPath[0] == 'tv') || (@$parsedPath[1] == 'tv'))
+				$mediaType = 'tv';
+			elseif ((@$parsedPath[0] == 'highlights') || (@$parsedPath[1] == 'highlights'))
+				$mediaType = 'highlight';
+			elseif (count($parsedPath) == 0)
+				$mediaType = 'user';
+			else
+				$mediaType = 'user';
+
+			//pe(['mediaType' => $mediaType, 'targetId' => $targetId, 'parsedPath' => $parsedPath]);
+
+			if ($mediaType == 'user')
+				redir(base_url('instagram/u/' . $targetId));
+			else
+				redir(base_url('instagram/download/' . $mediaType . '/' . $targetId));
 
 			if (strlen($targetId) == 0)
 				redir(base_url('instagram/tools/' . $cmd));
-
-			if (is_numeric($targetId))
-				redir(base_url('instagram/download/highlight:' . $targetId));
-			else
-				redir(base_url('instagram/download/' . $targetId));
 		}
 
 		//pe($input);
